@@ -1,0 +1,39 @@
+---
+title: "Comprehensive Powerpoint Slides"
+author: "Thomas Gredig"
+date: "5/25/2019"
+output: powerpoint_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Introduction
+
+The comprehensive Powerpoint File contains the notes and data from a research project. It includes both positive and negative results; i.e. experimental questions that were explored and no answers, or negative answers were found. It includes details and graphs, analysis, and reviews of papers. 
+
+The slides are not in order and the quality varies.
+
+For the generation of the publication, the slides are arranged logically to build a story, and slides with non-essential content are skipped as determined to best fit with the story. However, other slides are kept for completeness of the record.
+
+
+
+## RAW files
+
+```{r cars, echo = FALSE}
+path.source = '..'
+if(file.exists('myConfig.R')) { source('myConfig.R') }
+dir(path.source) -> file.list
+num.files = length(file.list)
+```
+
+Looking through the RAW folder, we found `r num.files`.
+
+- Number of VSM files: `r length(grep('VSM', file.list))`
+- Number of XRD files: `r length(grep('XRD', file.list))`
+- Number of AFM files: `r length(grep('AFM', file.list))`
+
+## XRD Graphs
+
+
