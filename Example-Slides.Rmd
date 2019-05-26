@@ -21,7 +21,7 @@ For the generation of the publication, the slides are arranged logically to buil
 
 ## RAW files
 
-```{r cars, echo = FALSE}
+```{r, echo = FALSE}
 path.source = '..'
 if(file.exists('myConfig.R')) { source('myConfig.R') }
 dir(path.source) -> file.list
@@ -36,4 +36,8 @@ Looking through the RAW folder, we found `r num.files`.
 
 ## XRD Graphs
 
-
+```{r}
+library(rigakuXRD)
+files.xrd = file.path(path.source, file.list[grep('XRD', file.list)])
+d <- xrd.read.TXT(files.xrd[1])
+```
