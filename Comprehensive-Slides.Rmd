@@ -2,9 +2,10 @@
 title: "Comprehensive Powerpoint Slides"
 author: "Thomas Gredig"
 date: "5/25/2019"
-output:
+output: 
+  powerpoint_presentation:
+    reference_doc: template.pptx
   beamer_presentation: default
-  powerpoint_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -36,6 +37,13 @@ Looking through the RAW folder, we found `r num.files`.
 - Number of XRD files: `r length(grep('XRD', file.list))`
 - Number of AFM files: `r length(grep('AFM', file.list))`
 
+
+## Ill-Formated RAW Files
+
+```{r, echo=FALSE}
+
+```
+
 ## XRD Graphs
 
 ```{r}
@@ -46,7 +54,7 @@ files.xrd = file.path(path.source, file.list[grep('XRD', file.list)])[1:5]
 for(fn in files.xrd) {
   d <- xrd.read.TXTnoheader(fn)
   data = d[[1]]
-  print("## TEST")
+  print(paste("Filaname:", fn))
   plot(data,log='y')
 }
 ```
